@@ -1,7 +1,8 @@
 let {loadConfig, RestServer} = require('@rajsinghudr/restserver');
 var express = require('express');
 
-const config = {PORT: 3000} || loadConfig();
+const port = process.env.PORT || 3000;
+const config = {PORT: port} || loadConfig();
 const server = new RestServer(config);
 server.pre();
 
